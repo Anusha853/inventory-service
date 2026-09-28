@@ -1,10 +1,10 @@
-package com.q1.profile;
+package com.q1.inventory;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProfileServiceApplicationTests {
+class InventoryServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
