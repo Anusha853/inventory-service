@@ -5,15 +5,14 @@ import com.q1.inventory.repository.InventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class InventoryService {
     @Autowired
     InventoryRepository repository;
     public Inventory checkStock(Long productId) {
-        Optional<Inventory> inv = repository.findById(productId);
-        return inv.get();
+        return repository.findById(productId)
+                .orElseGet(() -> new Inventory(productId, 0));
     }
 
     public String addProduct(Inventory inventory) {
